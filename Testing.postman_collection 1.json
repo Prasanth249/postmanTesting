@@ -1,0 +1,4902 @@
+{
+	"info": {
+		"_postman_id": "b1de1439-4336-48ea-a01c-0923e5355f56",
+		"name": "Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30273392",
+		"_collection_link": "https://orange-meadow-436650.postman.co/workspace/Team-Workspace~9a953ff7-2cdd-46fc-8190-00b35ba7c6a2/collection/30273392-b1de1439-4336-48ea-a01c-0923e5355f56?action=share&source=collection_link&creator=30273392"
+	},
+	"item": [
+		{
+			"name": "inValidPANWith16Digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163429157464312\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EmptyPAN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"  \r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3digitsRemovedFromPan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491512345678123123\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9DigitsPan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"216349157\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NoOfDigitsMoreThan16Upto19",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742123\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NoOfDigitsMoreThan19",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742123456\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IncludingSpecialCharWithIn16Digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"216349157464312@\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertingAlphabetWithIn16digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"216349A74P43742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LeadingWhiteSpace+16Digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \" 2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TailingWhiteSpace+16Digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742 \"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LeadingAndTailingWhiteSpaces+16digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \" 2163491574643742 \"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WhiteSpaceAtMiddle",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"21634915 74643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EmptyBIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BINWith2digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"23\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BiinWithMoreThan6Digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"1234456567\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BINWithCharacters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"ABCDEF\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BINWithSpecialChar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"23@2\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BINWithCharAndSpecialChar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN@$QWE\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BINWithAlphaNumeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN123\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BINWithUnlimitedNumbers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN@1233q87hufonoaeuf9f79saf8sf7hsidf8njdsz878vsfesfeser32432534sggsiigdgsdiguvsedsajhiawueaiwefewuifewjufw vFUYWEFUsdfzjdsuznjsfubj uawu46446d\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InstitutionId2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							" \r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"2\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InstitutionIdWith2Digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"10\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InstituionId3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"3\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InstitutionIdWithCharacters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"AB\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InstitutionIdWith7",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"7\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidPANWithoutDescription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inValidPANWithoutDescription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643743\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PANWithSepcialCharWithoutDescription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"21634915@4643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PANLessThan16WithoutDescription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PANMoreThan16WithOutDesc",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"216349157464374212345\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PANWith19WithOutDescription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742123\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WithOutIdWithOutPAN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id2PANMoreThan16",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"2\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"21634915746437421233\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id7PanWithSpecialCharacter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"7\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574@&643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IdAlphaNumericAndpanwithSpecialChar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"12Abh@^&\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491#%$^&5746\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EmptyBinEmptyPan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BinMoreThan8PanMoreThan16",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"11234678678\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"216349157464374212345\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BinAndPanWithSpecailChar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"12@##\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574%^&742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EmptyBinAndId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"\",\r\n    \"bin\": \"\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id2BinAlphaNumeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"2\",\r\n    \"bin\": \"BIN1234\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id3BinMoreThan8",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"3\",\r\n    \"bin\": \"1233456789\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id4BinWithSpecialChar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"4\",\r\n    \"bin\": \"B@123$\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EmptyBinIdPan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"\",\r\n    \"bin\": \"\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id1BinAlphaPanLenLessthan16",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"Abcdef\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"21634915745\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id2BinAlphaNumericPanLessThan16",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN123\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"216349157464\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id3BinAlphaPanLenLessThan16WithAlpha",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"2\",\r\n    \"bin\": \"BINsfs\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"21634974643Adfsdf\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id3BinAlphaNumericPanAlphaNumericSplLenLess19",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"3\",\r\n    \"bin\": \"BIN123\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574ASD2@\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id3BinAlphaNumericPanAlphaNumericSplLenGreateThan19",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"3\",\r\n    \"bin\": \"BIN123\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574ASD2@#$#$#$\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EmptyBinEmptyDesc",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"  \r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BinDigitsDescAlphaNumeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test123\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"12345\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BinAlphaNumericSplDescAlphaNumeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"   \r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test!@33DFer\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"N@123\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PanMoreThan19RRNAlphaNumeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test12\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"21634915435843453742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PanLessThan16RRNAlphaNumeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test123\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"216345643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PanAlphaNumericRRnAlphaNumeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							" \r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test1234\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574ABC742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PanAlphaNumericRRnAphaSplChar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test@#$\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"BBHu2163A74643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PanNumericSplCharRRnNumericSplChar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"123@%3\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163#^57464374&2\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PanAlphaNumericSplRRnAlphaNumericSpl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Te@3$t\",\r\n    \"date\": \"2023-12-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"ABC2163@!643742%^K\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PanMoreThan19RRnMoreThan12",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"head\": {\r\n        \"description\": \"Test\"\r\n    },\r\n    \"transaction\": {\r\n        \"rrn\": \"123456789012\",\r\n        \"date\": \"2023-12-19T17:32:28Z\"\r\n    },\r\n    \"institution\": {\r\n        \"id\": \"1\",\r\n        \"bin\": \"BIN\"\r\n    },\r\n    \"card\": {\r\n        \"pan\": \"2163491574643742455\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidPanWithOutDate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WithOutPanAndDate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DateDDMMYYYYPanMoreThan16",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"19-2-2023T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643742123\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MonthInAlphaPanLessThan16",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-Jan-19T17:32:28Z\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"2163491574643\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DateWithOutTimePanWithAlphaNumeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-12-19\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"216VBH157Ad643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WithOutTimeMonthAlphaPanAlphaNumericSpl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"Test\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"Test\",\r\n    \"date\": \"2023-Jan-19\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"1\",\r\n    \"bin\": \"BIN\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"24915@3ABD643742\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllFieldsEmpty",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlation-id",
+						"value": "249ebd1e-7338-47f6-8585-e0f24f9f1003",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "sessionId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"head\": {\r\n    \"description\": \"\"\r\n  },\r\n  \"transaction\": {\r\n    \"rrn\": \"\",\r\n    \"date\": \"\"\r\n  },\r\n  \"institution\": {\r\n    \"id\": \"\",\r\n    \"bin\": \"\"\r\n  },    \r\n    \"card\": {\r\n        \"pan\": \"\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eo-edgeconnect-eapi-jxse6p.5sc6y6-3.usa-e2.cloudhub.io/api/ssb/accountservices/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"eo-edgeconnect-eapi-jxse6p",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"ssb",
+						"accountservices",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
