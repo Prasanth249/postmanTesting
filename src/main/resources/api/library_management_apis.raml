@@ -1,0 +1,49 @@
+#%RAML 1.0
+title: library_management_apis
+
+/addItem:
+  post:
+    queryParameters:
+      id:
+        type: number
+      title:
+        type: string
+      quantity:
+        type: number
+/selectById:
+  get:
+    queryParameters:
+      id:
+        type: number
+/selectByTitle:
+  get:
+    queryParameters:
+      title:
+        type: string
+/selectByquantity:
+  get:
+    queryParameters:
+      quantity:
+        type: number
+/deleteById:
+  delete:
+    queryParameters:
+      id:
+        type: number
+/displayAll:
+  get:
+/sortByTitle:
+  get:
+/sortById:
+  get:
+/sortByQuantity:
+  get:
+/updateItem:
+  put:
+     queryParameters:
+      id:
+        type: number
+      title:
+        type: string
+      quantity:
+        type: number
